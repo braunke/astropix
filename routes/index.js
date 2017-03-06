@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+//link to helpers
 var apod = require('../helpers/apod');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'AstroPix' });
 });
-
+//handles form submit
 router.get('/fetch_picture', function(req, res, next) {
     if (req.query.today){
         apod(function (data, error) {

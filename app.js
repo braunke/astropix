@@ -15,6 +15,7 @@ var app = express();
 app.engine('.hbs', hbs({
   extname:'.hbs',
     defaultLayout: 'layout',
+    //path to partials directory
     partialsDor: path.join(__dirname, 'views/partials')
 }));
 app.set('views', path.join(__dirname, 'views'));

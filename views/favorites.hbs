@@ -1,0 +1,23 @@
+<h1>Favorites</h1>
+{{#each favorites}}
+<div class="favitem">
+    <a href="{{this.nasa_url}}">
+        <img class="faveimage"
+             src="{{this.url}}">
+    </a>
+    <p class="favtitle">{{this.title}}</p>
+    <p class="favdate">{{this.date}}</p>
+</div>
+<div class="RemoveFavorites">
+    <form action="favorites/delete" method="POST">
+        <input type="hidden" name="date" value="{{apod.date}}">
+
+        <input type="submit" class="btn btn-success" name="delete" value="Delete Picture from Favorites">
+    </form>
+</div>
+
+{{else}}
+<p>No favorites saved yet.</p>
+{{/each}}
+{{> navigation}}
+

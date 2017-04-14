@@ -1,16 +1,16 @@
 <h1>Favorites</h1>
-{{#each favorites}}
+{{#each favorites as |favorite|}}
 <div class="favitem">
-    <a href="{{this.nasa_url}}">
+    <a href="{{favorite.nasa_url}}">
         <img class="faveimage"
-             src="{{this.url}}">
+             src="{{favorite.url}}">
     </a>
-    <p class="favtitle">{{this.title}}</p>
-    <p class="favdate">{{this.date}}</p>
+    <p class="favtitle">{{favorite.title}}</p>
+    <p class="favdate">{{favorite.date}}</p>
 </div>
 <div class="RemoveFavorites">
     <form action="favorites/delete" method="POST">
-        <input type="hidden" name="date" value="{{apod.date}}">
+        <input type="hidden" name="date" value="{{favorite.date}}">
 
         <input type="submit" class="btn btn-success" name="delete" value="Delete Picture from Favorites">
     </form>

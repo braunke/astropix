@@ -27,14 +27,16 @@ router.post('/add', function(req, res, next){
   req.session.favorites.push(req.body);
   res.redirect('/favorites');
  });
+//deletes a favorite
 router.post('/delete', function(req, res, next){
     console.log(req.body.date);
  for (var x =0; x < req.session.favorites.length; x++){
+
      if (req.session.favorites[x].date == req.body.date){
 
 
-         req.session.favorites.remove(req.body);
-         res.redirect('back');
+         req.session.favorites.splice(x, 1);
+
      }
  }
  res.redirect('/favorites');

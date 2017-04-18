@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Configure sessions, and session storage in MongoDB
 var mongo_pw = process.env.MONGO_PW;
-var url = 'mongodb://localhost:27017/hello'
+var url = process.env.MONGO_URL;
 
 var store = new MongoDBStore({
   uri : url,
